@@ -1,0 +1,105 @@
+name: Gebrauchtteil anbieten
+description: Ein gebrauchtes Teil für den VW T4 Syncro auf wannabesyncro sichtbar machen. Verkauft wird nicht über die Seite – Interessenten melden sich direkt bei dir.
+title: "[Biete] "
+labels: ["gebrauchtteil"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du ein Teil weitergibst! Deine Anzeige erscheint auf der Seite, sobald sie kurz geprüft und freigeschaltet ist.
+        **Alles, was du hier einträgst, ist öffentlich sichtbar.** Gib nur Kontaktdaten an, die öffentlich sein dürfen. Es gelten die [Nutzungsbedingungen](https://skrillexofnorway-a11y.github.io/wannabesyncro/nutzungsbedingungen.html).
+  - type: input
+    id: teil
+    attributes:
+      label: Teil
+      description: Was bietest du an?
+      placeholder: z. B. Visco-Kupplung, überholt
+    validations:
+      required: true
+  - type: input
+    id: oe
+    attributes:
+      label: OE-Nummer
+      description: Die VW-Teilenummer, falls bekannt – damit andere prüfen können, ob es passt.
+      placeholder: z. B. 02D 525 533 C
+  - type: dropdown
+    id: motor
+    attributes:
+      label: Passt zu Motor
+      description: Bei Fahrwerk, Syncro-Antrieb und Karosserie meist „Alle Syncro-Motoren“.
+      multiple: true
+      options:
+        - Alle Syncro-Motoren
+        - AAB (2.4 D)
+        - ACV (2.5 TDI)
+        - AXL (2.5 TDI)
+        - AAF (2.5 Benzin)
+        - ACU (2.5 Benzin)
+        - AEU (2.5 Benzin)
+        - AET (2.5 Benzin)
+        - APL (2.5 Benzin)
+        - AVT (2.5 Benzin)
+    validations:
+      required: true
+  - type: dropdown
+    id: zustand
+    attributes:
+      label: Zustand
+      options:
+        - Neu / unbenutzt
+        - Überholt
+        - Gebraucht, gut
+        - Gebraucht, mit Mängeln
+        - Defekt / für Teile
+    validations:
+      required: true
+  - type: input
+    id: preis
+    attributes:
+      label: Preis
+      placeholder: z. B. 120 € VB oder „zu verschenken“
+    validations:
+      required: true
+  - type: input
+    id: standort
+    attributes:
+      label: Standort
+      description: PLZ und Ort reichen.
+      placeholder: z. B. 70372 Stuttgart
+    validations:
+      required: true
+  - type: dropdown
+    id: versand
+    attributes:
+      label: Versand
+      options:
+        - Abholung oder Versand
+        - Nur Abholung
+        - Nur Versand
+    validations:
+      required: true
+  - type: input
+    id: kontakt
+    attributes:
+      label: Kontakt
+      description: Wie erreichen dich Interessenten? Wird öffentlich angezeigt. Alternativ „Kommentar hier auf GitHub“.
+      placeholder: z. B. E-Mail, Kleinanzeigen-Link oder Instagram-Name
+    validations:
+      required: true
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Beschreibung
+      description: Laufleistung, Mängel, Herkunft, was dabei ist.
+  - type: textarea
+    id: fotos
+    attributes:
+      label: Fotos
+      description: Bilder einfach hier hineinziehen. Das erste Foto erscheint auf der Seite. Bitte keine Kennzeichen oder Personen.
+  - type: checkboxes
+    id: regeln
+    attributes:
+      label: Bestätigung
+      options:
+        - label: Ich darf das Teil anbieten, die Angaben stimmen, und mir ist klar, dass die Anzeige öffentlich ist.
+          required: true
