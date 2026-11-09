@@ -115,6 +115,21 @@ h2{font-family:var(--display);font-weight:700;letter-spacing:-.04em;line-height:
 footer{padding:36px 0 48px;font-size:13px;color:var(--ink3);background:var(--fill)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center}
 footer a:hover{color:var(--ink)}
+
+/* story */
+.story{background:var(--sand)}
+.story-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.story-g .intro{position:sticky;top:96px}
+.tl{list-style:none;position:relative;display:grid;gap:44px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:rgba(169,90,58,.25)}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-34px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 3px var(--clay)}
+.tl li.now::before{background:var(--clay)}
+.tl .yr{font-size:14px;font-weight:700;color:var(--clay-d)}
+.tl h3{font-family:var(--display);font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.03em;margin:4px 0 8px}
+.tl p{color:var(--ink2);max-width:52ch}
+.chap-sub{color:rgba(255,255,255,.72);margin:-18px 0 28px;max-width:60ch}
+@media(max-width:860px){.story-g{grid-template-columns:1fr}.story-g .intro{position:static}}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:100;background:rgba(10,12,20,.94);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .3s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -130,7 +145,7 @@ footer a:hover{color:var(--ink)}
 <body>
 <nav class="nav" id="nav"><div class="nav-in">
   <a class="brand" href="index.html" aria-label="Zur Startseite von syncroland"><img src="syncroland-s.webp" width="783" height="79" alt="syncroland"></a>
-  <div class="nav-links"><a href="#bus">Der Bus</a><a href="#touren">Touren</a><a href="#dabei">Fährt mit</a><a href="index.html#teile">Teile-Datenbank</a></div>
+  <div class="nav-links"><a href="#geschichte">Geschichte</a><a href="#bus">Der Bus</a><a href="#touren">Touren</a><a href="#dabei">Fährt mit</a><a href="index.html#teile">Teile-Datenbank</a></div>
   <div class="sp"></div>
   <a class="nav-ig press" href="https://www.instagram.com/wannabesyncro/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Folgen</span></a>
 </div></nav>
@@ -148,11 +163,25 @@ footer a:hover{color:var(--ink)}
   </div>
 </header>
 
+<section class="story" id="geschichte"><div class="wrap story-g">
+  <div class="intro">
+    <p class="kicker">Unsere Geschichte</p>
+    <h2>Wie aus „wannabe“ ein echter Syncro wurde.</h2>
+    <p class="lead">Seit 2023 sind wir in der T4-Welt unterwegs. Der Name ist geblieben, der Bus nicht.</p>
+  </div>
+  <ol class="tl">
+    <li><span class="yr">2023</span><h3>Der Wannabe-Syncro</h3><p>Unser erster T4 wollte unbedingt wie ein Syncro aussehen. War er aber nicht. Damit war @wannabesyncro geboren.</p></li>
+    <li><span class="yr">Danach</span><h3>Schluss mit wannabe</h3><p>Irgendwann haben wir uns einen echten Syncro organisiert und ihn mit Freunden und Bekannten einmal komplett gerichtet.</p></li>
+    <li><span class="yr">2025</span><h3>Die erste Syncro-Tour</h3><p>Von Deutschland bis nach Moldawien, runter nach Griechenland, über Albanien durch Ex-Jugoslawien und wieder heim.</p></li>
+    <li class="now"><span class="yr">2026</span><h3>Zu dritt nach Skandinavien</h3><p>Die große Skandinavien-Tour, zum ersten Mal zu dritt: Unser kleiner, sehr lebhafter Sohn ist die perfekte Ergänzung für die Syncro-Familie.</p></li>
+  </ol>
+</div></section>
+
 <section id="bus"><div class="wrap bus">
   <div>
     <p class="kicker">Der Bus</p>
     <h2>Ein Syncro, der lieber Schotter als Autobahn fährt.</h2>
-    <p class="lead">Aus dem Schrauben an diesem Bus ist syncroland entstanden: jede Teilenummer, die wir gesucht haben, landet jetzt in der Datenbank.</p>
+    <p class="lead">Mit Freunden und Bekannten einmal komplett gerichtet. Aus dem Schrauben ist syncroland entstanden: Jede Teilenummer, die wir gesucht haben, landet jetzt in der Datenbank.</p>
     <dl class="specs">
       <div><dt>Modell</dt><dd>VW T4 Syncro</dd></div>
       <div><dt>Motor</dt><dd>2.5 TDI, AXL, 102 PS</dd></div>
@@ -174,12 +203,14 @@ footer a:hover{color:var(--ink)}
 
   <div class="chap" style="margin-top:56px">
     <div class="chap-h"><h3 style="font-family:var(--display);font-size:clamp(28px,3.2vw,40px);font-weight:700;letter-spacing:-.035em">Balkan-Tour 2025</h3><span class="count">21 Bilder</span></div>
+    <p class="chap-sub">Unsere erste Tour mit dem Syncro: Deutschland, Moldawien, Griechenland, Albanien, Ex-Jugoslawien und zurück.</p>
     <button class="wide gi press" data-i="156" aria-label="Bild vergrößern: Bus in Schräglage am grünen Hang"><img class="" src="wbs/156.webp" width="2000" height="1333" alt="Unser Syncro in Schräglage auf einem grünen Hang" loading="lazy" decoding="async"></button>
     <div class="gal"><button class="gi press" data-i="123" aria-label="Bild vergrößern: Bus mit Dachträger über dem Meer"><img class="" src="wbs/123.webp" width="933" height="1400" alt="Bus mit Dachträger über dem Meer" loading="lazy" decoding="async"></button><button class="gi press" data-i="94" aria-label="Bild vergrößern: Bus auf einer Hängebrücke"><img class="" src="wbs/94.webp" width="933" height="1400" alt="Bus auf einer Hängebrücke" loading="lazy" decoding="async"></button><button class="gi press" data-i="125" aria-label="Bild vergrößern: Holzbrücke vor einer steilen Felswand"><img class="" src="wbs/125.webp" width="933" height="1400" alt="Holzbrücke vor einer steilen Felswand" loading="lazy" decoding="async"></button><button class="gi press" data-i="143" aria-label="Bild vergrößern: Bus vor einer orangefarbenen Felswand"><img class="" src="wbs/143.webp" width="1400" height="933" alt="Bus vor einer orangefarbenen Felswand" loading="lazy" decoding="async"></button><button class="gi press" data-i="134" aria-label="Bild vergrößern: Heck mit Reserverad in der Hochebene"><img class="" src="wbs/134.webp" width="1400" height="933" alt="Heck mit Reserverad in der Hochebene" loading="lazy" decoding="async"></button><button class="gi press" data-i="97" aria-label="Bild vergrößern: Bus im breiten Flussbett"><img class="" src="wbs/97.webp" width="1400" height="933" alt="Bus im breiten Flussbett" loading="lazy" decoding="async"></button><button class="gi press" data-i="115" aria-label="Bild vergrößern: Steile Schotterpiste bergauf"><img class="" src="wbs/115.webp" width="933" height="1400" alt="Steile Schotterpiste bergauf" loading="lazy" decoding="async"></button><button class="gi press" data-i="112" aria-label="Bild vergrößern: Front auf staubiger Piste"><img class="" src="wbs/112.webp" width="933" height="1400" alt="Front auf staubiger Piste" loading="lazy" decoding="async"></button><button class="gi press" data-i="9" aria-label="Bild vergrößern: Dachzelt im Abendlicht"><img class="" src="wbs/9.webp" width="933" height="1400" alt="Dachzelt im Abendlicht" loading="lazy" decoding="async"></button><button class="gi press" data-i="81" aria-label="Bild vergrößern: Dachzelt aufgeklappt bei Sonnenuntergang"><img class="" src="wbs/81.webp" width="933" height="1400" alt="Dachzelt aufgeklappt bei Sonnenuntergang" loading="lazy" decoding="async"></button><button class="gi press" data-i="79" aria-label="Bild vergrößern: Dachzelt-Leiter im letzten Licht"><img class="" src="wbs/79.webp" width="933" height="1400" alt="Dachzelt-Leiter im letzten Licht" loading="lazy" decoding="async"></button><button class="gi press" data-i="78" aria-label="Bild vergrößern: Bus mit offenem Dachzelt auf dem Feld"><img class="" src="wbs/78.webp" width="933" height="1400" alt="Bus mit offenem Dachzelt auf dem Feld" loading="lazy" decoding="async"></button><button class="gi press" data-i="161" aria-label="Bild vergrößern: Camp mit Dachzelt am Hang"><img class="" src="wbs/161.webp" width="933" height="1400" alt="Camp mit Dachzelt am Hang" loading="lazy" decoding="async"></button><button class="gi press" data-i="163" aria-label="Bild vergrößern: Dachzelt am Seeufer"><img class="" src="wbs/163.webp" width="933" height="1400" alt="Dachzelt am Seeufer" loading="lazy" decoding="async"></button><button class="gi press" data-i="107" aria-label="Bild vergrößern: Flusstal zwischen Bergen"><img class="" src="wbs/107.webp" width="1400" height="933" alt="Flusstal zwischen Bergen" loading="lazy" decoding="async"></button><button class="gi press" data-i="32" aria-label="Bild vergrößern: Heck mit Leiter und Reserverad"><img class="" src="wbs/32.webp" width="933" height="1400" alt="Heck mit Leiter und Reserverad" loading="lazy" decoding="async"></button><button class="gi press" data-i="52" aria-label="Bild vergrößern: Bus auf goldenem Grasland"><img class="" src="wbs/52.webp" width="933" height="1400" alt="Bus auf goldenem Grasland" loading="lazy" decoding="async"></button><button class="gi press" data-i="64" aria-label="Bild vergrößern: Bus auf einem Feldweg"><img class="" src="wbs/64.webp" width="933" height="1400" alt="Bus auf einem Feldweg" loading="lazy" decoding="async"></button><button class="gi press" data-i="99" aria-label="Bild vergrößern: Bus im Flussbett vor Bergen"><img class="" src="wbs/99.webp" width="933" height="1400" alt="Bus im Flussbett vor Bergen" loading="lazy" decoding="async"></button><button class="gi press" data-i="114" aria-label="Bild vergrößern: Bus auf Erdpiste"><img class="" src="wbs/114.webp" width="1400" height="933" alt="Bus auf Erdpiste" loading="lazy" decoding="async"></button></div>
   </div>
 
   <div class="chap">
     <div class="chap-h"><h3 style="font-family:var(--display);font-size:clamp(28px,3.2vw,40px);font-weight:700;letter-spacing:-.035em">Skandinavien &amp; Baltikum 2026</h3><span class="count">7 Bilder</span></div>
+    <p class="chap-sub">Die große Tour, zum ersten Mal zu dritt.</p>
     <button class="wide gi press" data-i="233" aria-label="Bild vergrößern: Blick über Fjord und Berge"><img class="" src="wbs/233.webp" width="1400" height="933" alt="Blick von oben über Fjord, Inseln und Berge" loading="lazy" decoding="async"></button>
     <div class="gal"><button class="gi press" data-i="182" aria-label="Bild vergrößern: Bus auf grüner Wiese vor Felsen"><img class="" src="wbs/182.webp" width="1400" height="933" alt="Bus auf grüner Wiese vor Felsen" loading="lazy" decoding="async"></button><button class="gi press" data-i="198" aria-label="Bild vergrößern: Bus an einem kleinen See"><img class="" src="wbs/198.webp" width="1400" height="933" alt="Bus an einem kleinen See" loading="lazy" decoding="async"></button><button class="gi press" data-i="196" aria-label="Bild vergrößern: Lange Brücke über das Wasser"><img class="" src="wbs/196.webp" width="933" height="1400" alt="Lange Brücke über das Wasser" loading="lazy" decoding="async"></button><button class="gi press" data-i="195" aria-label="Bild vergrößern: Straße entlang eines grünen Hangs"><img class="" src="wbs/195.webp" width="933" height="1400" alt="Straße entlang eines grünen Hangs" loading="lazy" decoding="async"></button><button class="gi press" data-i="209" aria-label="Bild vergrößern: Bus zwischen Kiefern"><img class="" src="wbs/209.webp" width="933" height="1400" alt="Bus zwischen Kiefern" loading="lazy" decoding="async"></button><button class="gi press" data-i="210" aria-label="Bild vergrößern: Heck mit Leiter im Wald"><img class="" src="wbs/210.webp" width="933" height="1400" alt="Heck mit Leiter im Wald" loading="lazy" decoding="async"></button></div>
   </div>
