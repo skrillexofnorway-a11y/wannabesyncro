@@ -140,12 +140,30 @@ footer a:hover{color:var(--ink)}
 .lbx{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px}
 @media(max-width:640px){.lbb{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero img{transform:none}}
+.setup-w{margin-top:72px}
+.setup-h{font-family:var(--display);font-size:clamp(24px,2.4vw,30px);font-weight:700;letter-spacing:-.03em}
+.setup-p{color:var(--ink2);margin-top:8px;max-width:58ch}
+.setup{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+.pcard{display:flex;flex-direction:column;background:var(--fill);border-radius:20px;overflow:hidden;color:var(--ink);text-decoration:none}
+.pcard .im{aspect-ratio:4/3;overflow:hidden;background:#e8e8ed}
+.pcard .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.pcard:hover .im img{transform:scale(1.04)}
+.pcard .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pcard .br{font-size:13px;color:var(--ink2);font-weight:500}
+.pcard h3{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.pcard p{font-size:14px;color:var(--ink2);line-height:1.45}
+.pcard .go{margin-top:auto;padding-top:8px;font-size:14.5px;font-weight:600;color:var(--clay-d);display:inline-flex;align-items:center;gap:5px}
+.pcard:hover .go{text-decoration:underline}
+@media (max-width:1100px){.setup{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.setup{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.setup{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:26px -20px 0;padding:0 20px;scrollbar-width:none}.setup::-webkit-scrollbar{display:none}.pcard{flex:none;width:76vw;scroll-snap-align:center}}
+@media (prefers-reduced-motion:reduce){.pcard .im img{transition:none}}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav"><div class="nav-in">
   <a class="brand" href="index.html" aria-label="Zur Startseite von syncroland"><img src="syncroland-s.webp" width="783" height="79" alt="syncroland"></a>
-  <div class="nav-links"><a href="#geschichte">Geschichte</a><a href="#bus">Der Bus</a><a href="#touren">Touren</a><a href="#dabei">Fährt mit</a><a href="index.html#teile">Teile-Datenbank</a></div>
+  <div class="nav-links"><a href="#geschichte">Geschichte</a><a href="#bus">Der Bus</a><a href="#verbaut">Verbaut</a><a href="#touren">Touren</a><a href="#dabei">Fährt mit</a><a href="index.html#teile">Teile-Datenbank</a></div>
   <div class="sp"></div>
   <a class="nav-ig press" href="https://www.instagram.com/wannabesyncro/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Folgen</span></a>
 </div></nav>
@@ -194,7 +212,19 @@ footer a:hover{color:var(--ink)}
     <a class="lk" href="index.html#finder">Teile für diesen Bus im Syncro-Finder</a>
   </div>
   <figure><img class="" src="wbs/25.webp" width="933" height="1400" alt="Der T4 Syncro mit aufgeklapptem Dachzelt im goldenen Gras" loading="lazy" decoding="async"></figure>
-</div></section>
+</div>
+<div class="wrap setup-w" id="verbaut">
+  <h3 class="setup-h">Was bei uns verbaut ist.</h3>
+  <p class="setup-p">Diese Teile sind an unserem Syncro dran und haben sich auf den Touren bewährt. Keine Werbelinks, einfach unsere Empfehlung.</p>
+  <div class="setup">
+<a class="pcard press" href="https://naturbummler.de/products/alu-loft" target="_blank" rel="noopener"><div class="im"><img src="p-loft.webp" alt="Alu-Loft Dachzelt aufgeklappt auf dem T4 Syncro im Wald" loading="lazy" decoding="async"></div><div class="bd"><span class="br">Naturbummler</span><h3>Alu-Loft Dachzelt</h3><p>Hybrid-Dachzelt mit Alu-Hartschale, Liegefläche 140 × 210 cm für 2–3 Personen, inklusive Matratze und Teleskopleiter.</p><span class="go">Zum Produkt<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>
+<a class="pcard press" href="https://www.sscbusparts.de/deutsch/shop/vw-t4/ssc-busparts-heckleiter-2-0-f%C3%BCr-den-vw-t4/" target="_blank" rel="noopener"><div class="im"><img src="p-leiter.webp" alt="Heckleiter am T4 Syncro" loading="lazy" decoding="async"></div><div class="bd"><span class="br">SSC Busparts</span><h3>Heckleiter 2.0</h3><p>Rostfrei, nur ca. 6,5 kg und bis 110 kg belastbar. Montage ohne Bohren, handgefertigt in Deutschland.</p><span class="go">Zum Produkt<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>
+<a class="pcard press" href="https://nd-rack.de/products/nd-rack-g1-dachtrager-plattform-vw-t4" target="_blank" rel="noopener"><div class="im"><img src="p-rack.webp" alt="Dachträger-Plattform mit Alubox und Bergeboards" loading="lazy" decoding="async"></div><div class="bd"><span class="br">ND-Rack</span><h3>G1 Dachträger-Plattform</h3><p>Flaches Profil, ca. 38 kg, 150 kg dynamische und 400 kg statische Last – trägt auch ein Dachzelt.</p><span class="go">Zum Produkt<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>
+<a class="pcard press" href="https://www.seikel.de/shop/hoeherlegung-t4-syncro-2/" target="_blank" rel="noopener"><div class="im"><img src="p-seikel.webp" alt="T4 Syncro von vorn auf dem Feldweg" loading="lazy" decoding="async"></div><div class="bd"><span class="br">Seikel</span><h3>Höherlegung T4 syncro</h3><p>Rund 30 mm mehr Bodenfreiheit, inklusive Teilegutachten für die Eintragung.</p><span class="go">Zum Produkt<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>
+<a class="pcard press" href="https://www.valostore.de/de" target="_blank" rel="noopener"><div class="im"><img src="p-valo.webp" alt="Zusatzscheinwerfer im Kühlergrill" loading="lazy" decoding="async"></div><div class="bd"><span class="br">Valostore</span><h3>Zusatzscheinwerfer</h3><p>Licht-Shop für Zusatzscheinwerfer, LED-Leisten und Stirnlampen – für Nachtfahrten und das Camp.</p><span class="go">Zum Produkt<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div></a>
+  </div>
+</div>
+</section>
 
 <section class="tours" id="touren"><div class="wrap">
   <p class="kicker">Touren</p>
